@@ -46,7 +46,9 @@
     ]
   },
   "devDependencies": {
+    "@types/faker": "^5.1.6",
     "@types/lodash": "^4.14.168",
-    "@types/lodash.meanby": "^4.10.5"
+    "@types/lodash.meanby": "^4.10.5",
+    "faker": "^5.3.1"
   }
 }
