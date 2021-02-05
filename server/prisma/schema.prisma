@@ -1,0 +1,44 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Show {
+  id          Int             @id @default(autoincrement())
+  title       String
+  description String
+  imageUrl    String?
+  streamOn    String?
+  schedule    String?
+  status      String?
+  genres      String?
+  characters  ShowCharacter[]
+  ratings     ShowRating[]
+}
+
+model ShowCharacter {
+  id      Int    @id @default(autoincrement())
+  showId  Int
+  actorId Int
+  name    String
+  actor   Actor  @relation(fields: [actorId], references: [id])
+  Show    Show   @relation(fields: [showId], references: [id])
+}
+
+model ShowRating {
+  id     Int    @id @default(autoincrement())
+  showId Int
+  name   String
+  show   Show   @relation(fields: [showId], references: [id])
+}
+
+model Actor {
+  id         Int             @id @default(autoincrement())
+  firstName  String
+  lastName   String
+  characters ShowCharacter[]
+}
