@@ -1,5 +1,5 @@
-import {Show} from '../../../../../interfaces/Show';
+import {Show} from '../../../interfaces/Show';
 
 export type LatestShowItemProps = {
-    show?: Show
+    show: Show
 }

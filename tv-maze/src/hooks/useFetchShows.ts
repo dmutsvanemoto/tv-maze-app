@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 import axios from 'axios';
-import { Show } from '../../../interfaces/Show';
+import { Show } from '../interfaces/Show';
 
 export const useFetchShows = () => {
     const [data, setData] = useState<Show[]>([]);

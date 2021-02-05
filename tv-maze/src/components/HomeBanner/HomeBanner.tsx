@@ -5,7 +5,7 @@ import {Description} from './components/Description';
 
 
 export const HomeBanner: FC<HomeBannerProps> = ({title, description}) => {
-    return <div>
+    return <div data-testid="homebanner">
         <Title title={title} />
         <Description description={description} />
     </div>

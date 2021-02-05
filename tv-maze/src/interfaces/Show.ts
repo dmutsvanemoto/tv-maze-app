@@ -1,23 +1,36 @@
 export interface Show {
-    title: string,
-    description: string,
-    imageUrl: string
-    rating: number,
-    details: ShowDetails,
-    cast: ShowCast[]
+    id: number;
+    title: string;
+    description: string;
+    imageUrl?: string;
+    streamOn?: string;
+    schedule?: string;
+    status?: string;
+    genres?: string;
+    characters?: ShowCharacter[];
+    ratings?: ShowRating[];
 }
 
-export interface ShowDetails {
-    streamOn: string,
-    schedule: string,
-    status: string,
-    genres: string[]
+export interface ShowCharacter {
+    id: number;
+    showId?: number;
+    actorId?: number;
+    name: string;
+    actor?: Actor;
+    show?: Show;
 }
 
-export interface ShowCast {
-    playedBy: {
-        firstName: string,
-        lastName: string
-    },
-    character: string
+export interface ShowRating {
+    id: number;
+    showId?: number;
+    rating: number;
+    show?: Show;
+}
+
+export interface Actor {
+    id: number;
+    showId?: number;
+    firstName: string;
+    lastName: string;
+    characters?: ShowCharacter[];
 }
